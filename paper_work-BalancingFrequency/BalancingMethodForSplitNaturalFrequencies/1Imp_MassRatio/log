@@ -1,0 +1,175 @@
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2018 The MathWorks, Inc.
+                   R2018b (9.5.0.944444) 64-bit (glnxa64)
+                              August 28, 2018
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+
+M =
+
+     5
+
+
+phi0 =
+
+    1.5708
+
+
+a =
+
+    0.2169
+
+
+h =
+
+    0.0022
+
+
+m_i =
+
+  Columns 1 through 7
+
+         0    0.0500    0.1000    0.1500    0.2000    0.2500    0.3000
+
+  Columns 8 through 11
+
+    0.3500    0.4000    0.4500    0.5000
+
+ 
+U_phi =
+ 
+7/24
+ 
+
+K_phi =
+
+    1.5296
+
+
+K_iL =
+
+    1.0000
+
+
+K_iH =
+
+    5.0000
+
+
+epsilonK_L =
+
+  Columns 1 through 7
+
+         0    0.0131    0.0262    0.0392    0.0523    0.0654    0.0785
+
+  Columns 8 through 11
+
+    0.0915    0.1046    0.1177    0.1308
+
+
+epsilonK_H =
+
+  Columns 1 through 7
+
+         0    0.0654    0.1308    0.1961    0.2615    0.3269    0.3923
+
+  Columns 8 through 11
+
+    0.4576    0.5230    0.5884    0.6538
+
+
+omega0 =
+
+  317.3976
+
+
+M =
+
+     5
+
+
+phi0 =
+
+    1.5708
+
+
+a =
+
+    0.2169
+
+
+h =
+
+    0.0022
+
+
+m_i =
+
+  Columns 1 through 7
+
+         0   -0.0500   -0.1000   -0.1500   -0.2000   -0.2500   -0.3000
+
+  Columns 8 through 11
+
+   -0.3500   -0.4000   -0.4500   -0.5000
+
+ 
+U_phi =
+ 
+7/24
+ 
+
+K_phi =
+
+    1.5296
+
+
+K_iL =
+
+    1.0000
+
+
+K_iH =
+
+    5.0000
+
+
+epsilonK_L =
+
+  Columns 1 through 7
+
+         0   -0.0131   -0.0262   -0.0392   -0.0523   -0.0654   -0.0785
+
+  Columns 8 through 11
+
+   -0.0915   -0.1046   -0.1177   -0.1308
+
+
+epsilonK_H =
+
+  Columns 1 through 7
+
+         0   -0.0654   -0.1308   -0.1961   -0.2615   -0.3269   -0.3923
+
+  Columns 8 through 11
+
+   -0.4576   -0.5230   -0.5884   -0.6538
+
+
+omega0 =
+
+  317.3976
+
+[Warning: The figure is too large for the page and will be cut off. Resize the
+figure, adjust the output size by setting the figure's PaperPosition property,
+use the 'print' command with either the  '-bestfit' or '-fillpage' options, or
+use the 'Best fit' or 'Fill page' options on the 'Print Preview' window.] 
+[> In validate (line 142)
+  In print (line 67)
+  In saveas (line 181)
+  In main (line 101)] 
+# ----- END Calculation ----- # 

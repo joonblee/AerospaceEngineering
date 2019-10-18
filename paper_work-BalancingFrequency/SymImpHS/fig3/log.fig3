@@ -1,0 +1,55 @@
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2018 The MathWorks, Inc.
+                   R2018b (9.5.0.944444) 64-bit (glnxa64)
+                              August 28, 2018
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+
+r =
+
+  Columns 1 through 7
+
+         0    0.0100    0.0200    0.0300    0.0400    0.0500    0.0600
+
+  Columns 8 through 11
+
+    0.0700    0.0800    0.0900    0.1000
+
+
+freq0 =
+
+  Columns 1 through 7
+
+   50.5154   50.5154   50.5154   50.5154   50.5154   50.5154   50.5154
+
+  Columns 8 through 11
+
+   50.5154   50.5154   50.5154   50.5154
+
+
+freqL =
+
+  Columns 1 through 7
+
+   50.5154   50.1884   49.8676   49.5529   49.2440   48.9409   48.6433
+
+  Columns 8 through 11
+
+   48.3511   48.0641   47.7821   47.5051
+
+
+freqH =
+
+  Columns 1 through 7
+
+   50.5154   48.9409   47.5051   46.1886   44.9758   43.8538   42.8118
+
+  Columns 8 through 11
+
+   41.8407   40.9328   40.0816   39.2814
+
+# ----- END Calculation ----- # 

@@ -1,0 +1,15 @@
+*title
+2D Plane Strain Element
+*control
+npoin=4, nelem=1, nsect=1, nmate=1, ndofn=2
+*node
+1  1.0            1.5             0.0
+2  3.1            1.8             0.0
+3  5.0            4.0             0.0
+4  0.8            3.0             0.0
+*element, nnode=4
+1 2 3 4 1 1 1
+*material
+1,2.05E11,0.29
+*section
+1,0.01

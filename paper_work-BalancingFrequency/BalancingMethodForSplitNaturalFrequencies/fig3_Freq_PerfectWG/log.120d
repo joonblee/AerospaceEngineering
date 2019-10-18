@@ -1,0 +1,114 @@
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2018 The MathWorks, Inc.
+                   R2018b (9.5.0.944444) 64-bit (glnxa64)
+                              August 28, 2018
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+
+phi0 =
+
+    2.0944
+
+
+M =
+
+     5
+
+
+hOa =
+
+  Columns 1 through 7
+
+    0.0100    0.0200    0.0300    0.0400    0.0500    0.0600    0.0700
+
+  Columns 8 through 10
+
+    0.0800    0.0900    0.1000
+
+
+a =
+
+  Columns 1 through 7
+
+    0.1822    0.1446    0.1263    0.1148    0.1065    0.1002    0.0952
+
+  Columns 8 through 10
+
+    0.0911    0.0876    0.0845
+
+
+h =
+
+  Columns 1 through 7
+
+    0.0018    0.0029    0.0038    0.0046    0.0053    0.0060    0.0067
+
+  Columns 8 through 10
+
+    0.0073    0.0079    0.0085
+
+
+mass =
+
+  Columns 1 through 7
+
+    5.0000    5.0000    5.0000    5.0000    5.0000    5.0000    5.0000
+
+  Columns 8 through 10
+
+    5.0000    5.0000    5.0000
+
+
+omega0 =
+
+   1.0e+03 *
+
+  Columns 1 through 7
+
+    0.4585    1.1554    1.9838    2.9114    3.9204    4.9994    6.1403
+
+  Columns 8 through 10
+
+    7.3372    8.5853    9.8807
+
+
+NatFreq0 =
+
+   1.0e+03 *
+
+  Columns 1 through 7
+
+    0.0730    0.1839    0.3157    0.4634    0.6239    0.7957    0.9773
+
+  Columns 8 through 10
+
+    1.1678    1.3664    1.5726
+
+
+### Print results and errors (=1-Analytical/FEM) ###
+
+x = 0.010000 , Analytical = 49.849000 , FEM = 72.972119 , err = -46.386325 
+
+x = 0.020000 , Analytical = 120.420000 , FEM = 183.879750 , err = -52.698680 
+
+x = 0.030000 , Analytical = 205.770000 , FEM = 315.739038 , err = -53.442697 
+
+x = 0.040000 , Analytical = 300.890000 , FEM = 463.363379 , err = -53.997600 
+
+x = 0.050000 , Analytical = 395.490000 , FEM = 623.944432 , err = -57.764907 
+
+x = 0.060000 , Analytical = 504.420000 , FEM = 795.672183 , err = -57.740015 
+
+x = 0.070000 , Analytical = 606.350000 , FEM = 977.264760 , err = -61.171726 
+
+x = 0.080000 , Analytical = 722.680000 , FEM = 1167.758189 , err = -61.587174 
+
+x = 0.090000 , Analytical = 836.590000 , FEM = 1366.396625 , err = -63.329304 
+
+x = 0.100000 , Analytical = 954.850000 , FEM = 1572.568862 , err = -64.692764 
+
+# ----- END Calculation ----- # 

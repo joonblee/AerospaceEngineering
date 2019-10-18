@@ -1,0 +1,9 @@
+This code is originally given from the file, fig5.
+The main difference is as below:
+ - fig5: M_total = M_HS + M_imp (M_HS = 5 kg, M_imp = 0.1 kg)
+ - fig7-1: M_total = 5 kg
+
+'main' includes main matlab commands
+'respective.sh' runs the matlab code of a specific structure with additional options(mode #, theta, mass) respectively.
+'run.sh' runs the bunddles of 'respective.sh' with various options.
+

@@ -1,0 +1,6 @@
+This code is originally given from JH's paper Fig. 3.
+
+'main' includes main matlab commands
+'respective.sh' runs the matlab code of a specific structure with additional options(mode #, theta, mass) respectively.
+'run.sh' runs the bunddles of 'respective.sh' with various options.
+

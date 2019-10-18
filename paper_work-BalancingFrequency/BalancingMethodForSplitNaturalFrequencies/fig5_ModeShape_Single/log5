@@ -1,0 +1,49 @@
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2018 The MathWorks, Inc.
+                   R2018b (9.5.0.944444) 64-bit (glnxa64)
+                              August 28, 2018
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+
+n =
+
+     2
+
+
+phi_i =
+
+    1.5708
+
+
+theta_i =
+
+     0
+
+
+m_i =
+
+   -0.0100
+
+
+SIGN_i =
+
+    '-'
+
+
+--------------------- Start Code -----------------------
+i =
+[Warning: The figure is too large for the page and will be cut off. Resize the
+figure, adjust the output size by setting the figure's PaperPosition property,
+use the 'print' command with either the  '-bestfit' or '-fillpage' options, or
+use the 'Best fit' or 'Fill page' options on the 'Print Preview' window.] 
+[> In validate (line 142)
+  In print (line 67)
+  In saveas (line 181)
+  In run (line 132)] 
+
+
+# ----- END Calculation ----- # 
