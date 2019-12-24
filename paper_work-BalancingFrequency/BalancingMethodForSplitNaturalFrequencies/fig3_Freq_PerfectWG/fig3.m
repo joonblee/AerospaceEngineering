@@ -70,32 +70,32 @@ COMSOLy_120=[69.095;414.52;829.55;1270.4];
 %figure(1);
 fig;
 hold on;
-plot1(1)=plot(hOa,freq_45,'-','color',[0 0 1],'LineWidth',1.1,'DisplayName','Analytical (\phi_0=\pi/4)');
+plot1(1)=plot(hOa,freq_45,'-','color',[0 0 1],'LineWidth',1.1,'DisplayName','\phi_0=\pi/4 (Analytic)');
 
 %figure(1);
 fig;
 hold on;
-plot1(2)=plot(COMSOLx,COMSOLy_45,'x','color',[0 0.4470 0.7410],'DisplayName','FEM (\phi_0=\pi/4)');
+plot1(2)=plot(COMSOLx,COMSOLy_45,'x','color',[0 0.4470 0.7410],'DisplayName','\phi_0=\pi/4 (FEM)');
 
 %figure(1);
 fig;
 hold on;
-plot1(3)=plot(hOa,freq_90,'--','color',[1 0 0],'LineWidth',1.1,'DisplayName','Analytical (\phi_0=\pi/2)');
+plot1(3)=plot(hOa,freq_90,'--','color',[1 0 0],'LineWidth',1.1,'DisplayName','\phi_0=\pi/2 (Analytic)');
 
 %figure(1);
 fig;
 hold on;
-plot1(4)=plot(COMSOLx,COMSOLy_90,'o','color',[0.8500 0.3250 0.0980],'DisplayName','FEM (\phi_0=\pi/2)');
+plot1(4)=plot(COMSOLx,COMSOLy_90,'o','color',[0.8500 0.3250 0.0980],'DisplayName','\phi_0=\pi/2 (FEM)');
 
 %figure(1);
 fig;
 hold on;
-plot1(5)=plot(hOa,freq_120,':','color',[1 0 1],'LineWidth',1.1,'DisplayName','Analytical (\phi_0=2\pi/3)');
+plot1(5)=plot(hOa,freq_120,':','color',[1 0 1],'LineWidth',1.1,'DisplayName','\phi_0=2\pi/3 (Analytic)');
 
 %figure(1);
 fig;
 hold on;
-plot1(6)=plot(COMSOLx,COMSOLy_120,'^','color',[0.4940 0.1840 0.5560],'DisplayName','FEM (\phi_0=2\pi/3)');
+plot1(6)=plot(COMSOLx,COMSOLy_120,'^','color',[0.4940 0.1840 0.5560],'DisplayName','\phi_0=2\pi/3 (FEM)');
 
 xlim([0.01 0.1])
 
@@ -103,8 +103,8 @@ xlim([0.01 0.1])
 %figure(1); 
 fig; legend(plot1(1:6),'Location','northwest'); legend boxoff;
 
-saveas(fig,'figures/fig3.png');
-saveas(fig,'figures/fig3.pdf');
+saveas(fig,'fig3.png');
+saveas(fig,'fig3.pdf');
 
 
 quit();
