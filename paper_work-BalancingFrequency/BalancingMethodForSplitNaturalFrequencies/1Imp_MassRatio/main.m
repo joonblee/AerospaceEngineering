@@ -20,61 +20,76 @@ freqL_hole = [];
 freqH_hole = [];
 
 for pm = [1 -1]
-M = 5 %5./(1+pm*r)
+  M = 5; %5./(1+pm*r)
 
-phi0 = pi/2
+  phi0 = pi/2;
 
-hOa = 0.01; % a/h
-a=((M*3/pi/rho)/(2+cos(phi0))/(1-cos(phi0))^2./(3*hOa+(hOa).^3/4)).^(1/3)
-h=a*hOa % width
+  hOa = 0.01; % a/h
+  a=((M*3/pi/rho)/(2+cos(phi0))/(1-cos(phi0))^2./(3*hOa+(hOa).^3/4)).^(1/3);
+  h=a*hOa; % width
 
-phi_i   = pi/2;
-theta_i =    0;
+  phi_i   = pi/2;
+  theta_i =    0;
 
-%%% Run iteration %%%
-% attached mass
-m_i = pm*r.*M
+  %%% Run iteration %%%
+  % attached mass
+  m_i = pm*r.*M;
 
-% variables
-syms phi;
+  % variables
+  syms phi;
 
-% shift angle
-zetaL = 1/(2*n) * theta_i; % j = 0 = L
-zetaH = 1/(2*n) * (theta_i + pi ); % j = 1 = H
+  % shift angle
+  zetaL = 1/(2*n) * theta_i; % j = 0 = L
+  zetaH = 1/(2*n) * (theta_i + pi ); % j = 1 = H
 
-% integrations
-U_phi = int( tan(phi/2)^(2*n) / sin(phi)^3 ,phi,0,phi0)
-K_phi = double(int( tan(phi/2)^(2*n) * ((n+cos(phi))^2+2*sin(phi)^2) * sin(phi) ,phi,0,phi0))
+  % integrations
+  U_phi = int( tan(phi/2)^(2*n) / sin(phi)^3 ,phi,0,phi0);
+  K_phi = double(int( tan(phi/2)^(2*n) * ((n+cos(phi))^2+2*sin(phi)^2) * sin(phi) ,phi,0,phi0));
 
-K_iL = tan(phi_i/2)^(2*n) * (sin(phi_i)^2 + (n+cos(phi_i))^2 * sin(n*(theta_i-zetaL))^2 )
-K_iH = tan(phi_i/2)^(2*n) * (sin(phi_i)^2 + (n+cos(phi_i))^2 * sin(n*(theta_i-zetaH))^2 )
+  K_iL = tan(phi_i/2)^(2*n) * (sin(phi_i)^2 + (n+cos(phi_i))^2 * sin(n*(theta_i-zetaL))^2 );
+  K_iH = tan(phi_i/2)^(2*n) * (sin(phi_i)^2 + (n+cos(phi_i))^2 * sin(n*(theta_i-zetaH))^2 );
 
 
-% epsilon
-epsilonK_L = K_iL/K_phi*m_i./(pi*rho*a.^2.*h)
-epsilonK_H = K_iH/K_phi*m_i./(pi*rho*a.^2.*h)
+  % epsilon
+  epsilonK_L = K_iL/K_phi*m_i./(pi*rho*a.^2.*h);
+  epsilonK_H = K_iH/K_phi*m_i./(pi*rho*a.^2.*h);
 
-% eigen frequency (angular freq, natural frequency)
-omega0 = double(( n^2*(n^2-1)^2 * E*h.^2 ./ (3*(1+mu)*rho*a.^4) * U_phi/K_phi ).^.5)
-omegaL = double(omega0./(1+epsilonK_L).^.5);
-omegaH = double(omega0./(1+epsilonK_H).^.5);
+  % eigen frequency (angular freq, natural frequency)
+  omega0 = double(( n^2*(n^2-1)^2 * E*h.^2 ./ (3*(1+mu)*rho*a.^4) * U_phi/K_phi ).^.5);
+  omegaL = double(omega0./(1+epsilonK_L).^.5);
+  omegaH = double(omega0./(1+epsilonK_H).^.5);
 
-% linear frequency
-freq0 = double(omega0 / (2*pi));
-freqL = double(omegaL / (2*pi));
-freqH = double(omegaH / (2*pi));
+  % linear frequency
+  freq0 = double(omega0 / (2*pi));
+  freqL = double(omegaL / (2*pi));
+  freqH = double(omegaH / (2*pi));
 
-if pm == 1
-  freq0_mass = freq0(1) * ones(1,length(r));
-  freqL_mass = freqL;
-  freqH_mass = freqH;
-else
-  freqL_hole = freqL;
-  freqH_hole = freqH;
+  if pm == 1
+    freq0_mass = freq0(1) * ones(1,length(r));
+    freqL_mass = freqL;
+    freqH_mass = freqH;
+  else
+    freqL_hole = freqL;
+    freqH_hole = freqH;
+  end
+
 end
 
-end
+%%%%%%%%%%%%%%%%%%%%%%%%
+% FEM (COMSOL) results %
+%%%%%%%%%%%%%%%%%%%%%%%%
+Xaxis_FEM = [0.02,0.04,0.06,0.08,0.1];
+freq0_mass_FEM = 49.164;
+freqL_mass_FEM = [48.568,48.052,47.601,47.203,46.850];
+freqH_mass_FEM = [46.270,43.921,41.986,40.371,39.005];
+freq0_hole_FEM = 49.147;
+freqL_hole_FEM = [49.860,50.682,51.668,52.870,54.362];
+freqH_hole_FEM = [52.663,56.848,61.525,66.286,70.721];
 
+
+%%%%%%%%%%
+% Figure %
+%%%%%%%%%%
 
 fig=figure(1);
 
@@ -83,22 +98,26 @@ fig.PaperPositionMode='auto';
 fig_pos=fig.PaperPosition;
 fig.PaperSize=[fig_pos(3) fig_pos(4)];
 
+grid on;
 
-p(1)=plot(r,freq0_mass,'k','LineStyle','-','LineWidth',1.1,'DisplayName','perfect');
 hold on;
-p(2)=plot(r,freqL_mass,'b','LineStyle','--','LineWidth',1.1,'DisplayName','1M (j = L)');
-p(3)=plot(r,freqH_mass,'color',[0.58 0 0.83],'LineStyle','--','LineWidth',1.1,'DisplayName','1M (j = H)');
-p(4)=plot(r,freqL_hole,'r','LineStyle',':','LineWidth',1.1,'DisplayName','1H (j = L)');
-p(5)=plot(r,freqH_hole,'color',[1.0 0.5 0.0],'LineStyle',':','LineWidth',1.1,'DisplayName','1H (j = H)');
+p(1)=plot(r,freqL_mass./freq0_mass,'b','LineStyle','--','LineWidth',1.1,'DisplayName','1M, j = L (Analytic)');
+p(2)=plot(Xaxis_FEM,freqL_mass_FEM/freq0_mass_FEM,'bo','DisplayName','1M, j = L (FEM)');
+p(3)=plot(r,freqH_mass./freq0_mass,'color',[0.58 0 0.83],'LineStyle','--','LineWidth',1.1,'DisplayName','1M, j = H (Analytic)');
+p(4)=plot(Xaxis_FEM,freqH_mass_FEM/freq0_mass_FEM,'d','color',[0.58 0 0.83],'DisplayName','1M, j = H (FEM)');
+p(5)=plot(r,freqL_hole./freq0_mass,'r','LineStyle',':','LineWidth',1.1,'DisplayName','1H, j = L (Analytic)');
+p(6)=plot(Xaxis_FEM,freqL_hole_FEM/freq0_hole_FEM,'rs','DisplayName','1H, j = L (FEM)');
+p(7)=plot(r,freqH_hole./freq0_mass,'color',[1.0 0.5 0.0],'LineStyle',':','LineWidth',1.1,'DisplayName','1H, j = H (Analytic)');
+p(8)=plot(Xaxis_FEM,freqH_hole_FEM/freq0_hole_FEM,'^','color',[1.0 0.5 0.0],'DisplayName','1H, j = H (FEM)');
 
 
 xlabel('m_{imp} / m_{shell}');
-ylabel('Frequency [Hz]');
+ylabel('Frequency Ratio ($r$)','Interpreter','Latex');
 
-legend(p(1:5),'Location','northwest'); legend boxoff;
+legend(p(1:8),'Location','northwest'); legend boxoff;
 
-saveas(fig,'figures/1imp_massRatio.png');
-saveas(fig,'figures/1imp_massRatio.pdf');
+saveas(fig,'1imp_massRatio.png');
+saveas(fig,'1imp_massRatio.pdf');
 
 %%% End of the code %%%
 fprintf('# ----- END Calculation ----- # \n');
