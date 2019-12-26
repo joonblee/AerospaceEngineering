@@ -125,7 +125,7 @@ subplot1 = subplot(2,1,1);
 % p(1)=plot(n,freq0_mass,'-ko','DisplayName','perfect');
 hold on;
 p(3)=plot(n,freqL_mass,'--b','LineWidth',1.1,'DisplayName','1M, j = L (Analytic)');
-p(4)=plot(n,freqL_mass_FEM,'bx','DisplayName','1M, j = L (FEM)');
+p(4)=plot(n,freqL_mass_FEM,'bo','DisplayName','1M, j = L (FEM)');
 p(5)=plot(n,freqH_mass,'--','LineWidth',1.1,'color',[0.58 0 0.83],'DisplayName','1M, j = H (Analytic)');
 p(6)=plot(n,freqH_mass_FEM,'d','color',[0.58 0 0.83],'DisplayName','1M, j = H (FEM)');
 p(7)=plot(n,freqL_hole,':r','LineWidth',1.5,'DisplayName','1H, j = L (Analytic)');
@@ -133,7 +133,7 @@ p(8)=plot(n,freqL_hole_FEM,'rs','DisplayName','1H, j = L (FEM)');
 p(9)=plot(n,freqH_hole,':','LineWidth',1.5,'color',[1.0 0.5 0.0],'DisplayName','1H, j = H (Analytic)');
 p(10)=plot(n,freqH_hole_FEM,'^','color',[1.0 0.5 0.0],'DisplayName','1H, j = H (FEM)');
 p(1)=plot(n,freq0_mass,'-k','LineWidth',.7,'DisplayName','perfect (Analytic)');
-p(2)=plot(n,freq0_FEM,'ko','DisplayName','perfect (FEM)');
+p(2)=plot(n,freq0_FEM,'k+','DisplayName','perfect (FEM)');
 
 set(gca,'XTick',2:6);
 set(gca,'XTickLabel',{'','','','',''});
@@ -152,7 +152,7 @@ subplot2 = subplot(2,1,2);
 
 hold on;
 p(11)=plot(n,freqL_mass./freq0_mass,'--b','LineWidth',1.1,'DisplayName','1M, j = L (Analytic)');
-p(12)=plot(n,freqL_mass_FEM./freq0_FEM,'bx','DisplayName','1M, j = L (FEM)');
+p(12)=plot(n,freqL_mass_FEM./freq0_FEM,'bo','DisplayName','1M, j = L (FEM)');
 p(13)=plot(n,freqH_mass./freq0_mass,'--','LineWidth',1.1,'color',[0.58 0 0.83],'DisplayName','1M, j = H (Analytic)');
 p(14)=plot(n,freqH_mass_FEM./freq0_FEM,'d','color',[0.58 0 0.83],'DisplayName','1M, j = H (FEM)');
 p(15)=plot(n,freqL_hole./freq0_mass,':r','LineWidth',1.5,'DisplayName','1H, j = L (Analytic)');
