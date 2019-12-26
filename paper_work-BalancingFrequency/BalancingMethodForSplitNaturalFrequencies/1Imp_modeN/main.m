@@ -138,6 +138,8 @@ p(2)=plot(n,freq0_FEM,'ko','DisplayName','perfect (FEM)');
 set(gca,'XTick',2:6);
 set(gca,'XTickLabel',{'','','','',''});
 
+xlim([2.-0.001 6.+0.001]);
+
 %xl1=xlabel('Erase');
 yl1=ylabel('Frequency [Hz]','Interpreter','Latex');
 
@@ -163,6 +165,8 @@ set(gca,'XTickLabel',{'2','3','4','5','6'});
 
 set(gca,'YTick',0.8:0.2:1.4);
 set(gca,'YTickLabel',{'0.8','1.0','1.2',''});
+
+xlim([2.-0.001 6.+0.001]);
 
 xl2=xlabel('mode number','Interpreter','Latex');
 yl2=ylabel('Frequency Ratio ($r$)','Interpreter','Latex');
