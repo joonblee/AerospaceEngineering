@@ -86,12 +86,12 @@ fig.PaperSize=[fig_pos(3) fig_pos(4)];
 subplot1 = subplot(2,1,1);
 
 hold on;
-p(1)=plot(hOa,freq_45,'-','color',[0 0 1],'LineWidth',1.1,'DisplayName','\phi_0=\pi/4 (Analytic)');
-p(2)=plot(COMSOLx,COMSOLy_45,'x','color',[0 0.4470 0.7410],'DisplayName','\phi_0=\pi/4 (FEM)');
-p(3)=plot(hOa,freq_90,'--','color',[1 0 0],'LineWidth',1.1,'DisplayName','\phi_0=\pi/2 (Analytic)');
-p(4)=plot(COMSOLx,COMSOLy_90,'o','color',[0.8500 0.3250 0.0980],'DisplayName','\phi_0=\pi/2 (FEM)');
-p(5)=plot(hOa,freq_120,':','color',[1 0 1],'LineWidth',1.1,'DisplayName','\phi_0=2\pi/3 (Analytic)');
-p(6)=plot(COMSOLx,COMSOLy_120,'^','color',[0.4940 0.1840 0.5560],'DisplayName','\phi_0=2\pi/3 (FEM)');
+p(1)=plot(hOa,freq_45,'-r','LineWidth',.5,'DisplayName','\phi_0=\pi/4 (Analytic)');
+p(2)=plot(COMSOLx,COMSOLy_45,'xr','MarkerSize',4.,'DisplayName','\phi_0=\pi/4 (FEM)');
+p(3)=plot(hOa,freq_90,'--b','LineWidth',.5,'DisplayName','\phi_0=\pi/2 (Analytic)');
+p(4)=plot(COMSOLx,COMSOLy_90,'ob','MarkerSize',3.,'DisplayName','\phi_0=\pi/2 (FEM)');
+p(5)=plot(hOa,freq_120,':','color',[0.58 0 0.83],'LineWidth',1.1,'DisplayName','\phi_0=2\pi/3 (Analytic)');
+p(6)=plot(COMSOLx,COMSOLy_120,'^','color',[0.58 0 0.83],'MarkerSize',3.,'DisplayName','\phi_0=2\pi/3 (FEM)');
 
 set(gca,'XTick',0.01:0.01:0.1);
 set(gca,'XTickLabel',{'','','','','','','','','',''});
@@ -107,9 +107,11 @@ legend(p(1:6),'Location','northwest'); legend boxoff;
 subplot2 = subplot(2,1,2);
 
 hold on;
-p(7)=plot(COMSOLx,(ref_freq_45-COMSOLy_45)./ref_freq_45,'-x','color',[0 0.4470 0.7410]);
-p(8)=plot(COMSOLx,(ref_freq_90-COMSOLy_90)./ref_freq_90,'--o','color',[0.8500 0.3250 0.0980]);
-p(9)=plot(COMSOLx,(ref_freq_120-COMSOLy_120)./ref_freq_120,':^','color',[0.4940 0.1840 0.5560]);
+p(7)=plot(COMSOLx,(ref_freq_45-COMSOLy_45)./ref_freq_45,'-rx','LineWidth',.5,'MarkerSize',4.);
+p(8)=plot(COMSOLx,(ref_freq_90-COMSOLy_90)./ref_freq_90,'--ob','LineWidth',.5,'MarkerSize',3.);
+p(9)=plot(COMSOLx,(ref_freq_120-COMSOLy_120)./ref_freq_120,':','LineWidth',1.1,'color',[0.58 0 0.83]);
+
+dummy=plot(COMSOLx,(ref_freq_120-COMSOLy_120)./ref_freq_120,'^','MarkerSize',3.,'color',[0.58 0 0.83]);
 
 set(gca,'XTick',0.01:0.01:0.1);
 set(gca,'XTickLabel',{'0.01','0.02','0.03','0.04','0.05','0.06','0.07','0.08','0.09','0.1'});
