@@ -101,17 +101,17 @@ fig.PaperSize=[fig_pos(3) fig_pos(4)];
 grid on;
 
 hold on;
-p(1)=plot(r,freqL_mass./freq0_mass,'b','LineStyle','--','LineWidth',1.1,'DisplayName','1M, j = L (Analytic)');
-p(2)=plot(Xaxis_FEM,freqL_mass_FEM/freq0_mass_FEM,'bo','DisplayName','1M, j = L (FEM)');
-p(3)=plot(r,freqH_mass./freq0_mass,'color',[0.58 0 0.83],'LineStyle','--','LineWidth',1.1,'DisplayName','1M, j = H (Analytic)');
-p(4)=plot(Xaxis_FEM,freqH_mass_FEM/freq0_mass_FEM,'d','color',[0.58 0 0.83],'DisplayName','1M, j = H (FEM)');
+p(1)=plot(r,freqL_mass./freq0_mass,'b','LineStyle','--','LineWidth',.5,'DisplayName','1M, j = L (Analytic)');
+p(2)=plot(Xaxis_FEM,freqL_mass_FEM/freq0_mass_FEM,'bo','MarkerSize',3.,'DisplayName','1M, j = L (FEM)');
+p(3)=plot(r,freqH_mass./freq0_mass,'color',[0.58 0 0.83],'LineStyle','--','LineWidth',.5,'DisplayName','1M, j = H (Analytic)');
+p(4)=plot(Xaxis_FEM,freqH_mass_FEM/freq0_mass_FEM,'d','MarkerSize',3.,'color',[0.58 0 0.83],'DisplayName','1M, j = H (FEM)');
 p(5)=plot(r,freqL_hole./freq0_mass,'r','LineStyle',':','LineWidth',1.1,'DisplayName','1H, j = L (Analytic)');
-p(6)=plot(Xaxis_FEM,freqL_hole_FEM/freq0_hole_FEM,'rs','DisplayName','1H, j = L (FEM)');
+p(6)=plot(Xaxis_FEM,freqL_hole_FEM/freq0_hole_FEM,'rs','MarkerSize',3.,'DisplayName','1H, j = L (FEM)');
 p(7)=plot(r,freqH_hole./freq0_mass,'color',[1.0 0.5 0.0],'LineStyle',':','LineWidth',1.1,'DisplayName','1H, j = H (Analytic)');
-p(8)=plot(Xaxis_FEM,freqH_hole_FEM/freq0_hole_FEM,'^','color',[1.0 0.5 0.0],'DisplayName','1H, j = H (FEM)');
+p(8)=plot(Xaxis_FEM,freqH_hole_FEM/freq0_hole_FEM,'^','MarkerSize',3.,'color',[1.0 0.5 0.0],'DisplayName','1H, j = H (FEM)');
 
 
-xlabel('m_{imp} / m_{shell}');
+xlabel('$m_{imp}$ / $m_{shell}$','Interpreter','Latex');
 ylabel('Frequency Ratio ($r$)','Interpreter','Latex');
 
 legend(p(1:8),'Location','northwest'); legend boxoff;
