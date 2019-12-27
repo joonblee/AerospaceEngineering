@@ -96,10 +96,15 @@ p(6)=plot(COMSOLx,COMSOLy_120,'^','color',[0.58 0 0.83],'MarkerSize',3.,'Display
 set(gca,'XTick',0.01:0.01:0.1);
 set(gca,'XTickLabel',{'','','','','','','','','',''});
 
+set(gca, 'YScale', 'log')
+set(gca, 'YMinorTick','on', 'YMinorGrid','on')
+set(gca,'YTick',[50 60 70 80 90 100 200 300 400 500 600 700 800 900 1000]);
+set(gca,'YTickLabel',{'50', '60', '', '80', '', '100', '200', '300', '400', '500', '600', '', '800', '', '1000'});
+
 xlim([0.01 0.1]);
 
 ylabel('Frequency [Hz]','Interpreter','Latex');
-legend(p(1:6),'Location','northwest'); legend boxoff;
+legend(p(1:6),'Location','southeast'); legend boxoff;
 
 %%%%%%%%%%%%%
 % subplot 2 %
